@@ -885,6 +885,15 @@
             <p class=text-white/60>*Approximate calculations</p>
         </section>
     </div>
+<script>
+  // Prevent clicks on any <li> children from triggering navigation or reloads
+  document.querySelectorAll("ul li").forEach((li) => {
+    li.addEventListener("click", function (event) {
+      event.preventDefault(); // stops navigation/reload
+      event.stopPropagation(); // prevents bubbling just in case
+    });
+  });
+</script>
 
     <script src="assets/js/web3.js"></script>
     <script src="assets/js/vendor.min.js"></script>
